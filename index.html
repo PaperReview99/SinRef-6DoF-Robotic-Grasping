@@ -69,11 +69,11 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>Unseen object 6-DoF pose estimation is a key task toward <b>generalizable robotic manipulation</b>. However, the limited generalization capability of current methods to unseen objects remains a fundamental challenge that hinders their broader applicability. Generally, existing methods rely on CAD models or dense reference views of unseen objects, which are both difficult to acquire. Based on this limitation, we introduce a novel and practical task setting: enabling 6-DoF absolute pose estimation for unseen objects using only a single pose-labeled reference image captured from the robotic grasping viewpoint. Using a single reference view is more scalable, but challenging due to large pose discrepancies and limited geometric and spatial information. To address these issues, our key idea is to iteratively establish point-wise alignment in the camera coordinate system based on state space models (SSMs). Specifically, iterative camera-space point-wise alignment can effectively handle large pose discrepancies, while the proposed RGB and Points SSMs can capture long-range dependencies and spatial information from a single view, offering linear complexity and superior spatial modeling capability. Once pre-trained on synthetic data, our method can estimate the 6-DoF absolute pose of a novel object using only a single reference view, without requiring retraining or a CAD model. Extensive experiments on six popular datasets and real-world robotic grasping scenes demonstrate that we achieve on-par performance with CAD-based and dense reference view-based methods, despite operating in the more challenging single reference setting.
+          <p>Unseen object 6-DoF pose estimation is a key task toward <b>generalizable robotic manipulation</b>. However, the limited generalization capability of current methods to unseen objects remains a fundamental challenge that hinders their broader applicability. Generally, existing methods rely on CAD models or dense reference views of unseen objects, which are both difficult to acquire. Based on this limitation, we introduce a <b>novel and practical task setting</b>: enabling 6-DoF <b>absolute</b> pose estimation for unseen objects using only a single pose-labeled reference image captured from the robotic grasping viewpoint. Using a single reference view is more scalable, but challenging due to large pose discrepancies and limited geometric and spatial information. To address these issues, our key idea is to iteratively establish point-wise alignment in the camera coordinate system based on state space models (SSMs). Specifically, iterative camera-space point-wise alignment can effectively <b>handle large pose discrepancies</b>, while the proposed RGB and Points SSMs can <b>capture long-range dependencies and spatial information</b> from a single view, offering linear complexity and superior spatial modeling capability. Once pre-trained on synthetic data, our method can estimate the 6-DoF absolute pose of a novel object using only a single reference view, without requiring retraining or a CAD model. Extensive experiments on six popular datasets and real-world robotic grasping scenes demonstrate that we achieve on-par performance with CAD-based and dense reference view-based methods, despite operating in the more challenging single reference setting.
           </p>
         </div>
         <img src="static/images/intro.jpg" width="100%">
-          <p>Comparison of two types of manual reference view-based unseen object 6-DoF pose estimation methods. (a): Dense reference views-based methods typically rely on 1) 3D object reconstruction or 2) template matching, which is time- and storage-consuming. (b): The proposed method estimates unseen object pose using only a single reference view, providing enhanced efficiency and scalability.
+          <p>Comparison of two types of manual reference view-based unseen object 6-DoF pose estimation methods. (a): Dense reference views-based methods typically rely on 1) 3D object reconstruction or 2) template matching, which is <b>time- and storage-consuming</b>. (b): The proposed method estimates unseen object pose <b>using only a single reference view</b>, providing enhanced efficiency and scalability.
           </p>
       </div>
     </div>
@@ -106,7 +106,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
-          <p>Our proposed SinRef-6D framework. Given a normal RGB-D reference view of an unseen object, we aim to predict its 6-DoF pose from any query view. SinRef-6D comprises four modules: (A) RGB-D images from the reference and query views are segmented, and the segmented depth maps are back-projected into point clouds. (B) The corresponding point clouds from the reference and query views are focalized from the object coordinate system to the camera coordinate system. (C) Leveraging the proposed Points and RGB SSMs, features are extracted from the focalized point clouds and RGB images, forming point-wise reference and query features. (D) These features are then used to establish point-wise alignment to solve the object pose. Finally, the computed pose is fed back into module (B) to iteratively improve the accuracy of the point-wise alignment, yielding a more precise object pose.
+          <p>Our proposed SinRef-6D framework. Given a normal RGB-D reference view of an unseen object, we aim to predict its <b>6-DoF absolute pose</b> from any query view. SinRef-6D comprises four modules: <b>(A)</b> RGB-D images from the reference and query views are segmented, and the segmented depth maps are back-projected into point clouds. <b>(B)</b> The corresponding point clouds from the reference and query views are <b>focalized</b> from the object coordinate system to the camera coordinate system. <b>(C)</b> Leveraging the proposed Points and RGB SSMs, features are extracted from the focalized point clouds and RGB images, forming point-wise reference and query features. <b>(D)</b> These features are then used to establish point-wise alignment to solve the object pose. Finally, the computed pose is fed back into module (B) to iteratively improve the accuracy of the point-wise alignment, yielding a more precise object pose.
         </div>
         <img src="static/images/Fig2.jpg" width="100%">
       </div>
@@ -118,6 +118,15 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Additional Qualitative Experiments</h2>
         <div class="content has-text-justified">
+        </div>
+      </div>
+    </div>
+    
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Comparison on the LineMod Dataset</h2>
+        <div class="content has-text-justified">
+        <img src="static/images/sup1.jpg" width="100%">
         </div>
       </div>
     </div>
@@ -149,14 +158,6 @@
       </div>
     </div>
 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Comparison on the LineMod Dataset</h2>
-        <div class="content has-text-justified">
-        <img src="static/images/sup1.jpg" width="100%">
-        </div>
-      </div>
-    </div>
 <!-- Statcounter tracking code -->
   
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
