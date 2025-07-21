@@ -107,6 +107,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>Our proposed SinRef-6D framework. Given a normal RGB-D reference view of an unseen object, we aim to predict its 6-DoF pose from any query view. SinRef-6D comprises four modules: (A) RGB-D images from the reference and query views are segmented, and the segmented depth maps are back-projected into point clouds. (B) The corresponding point clouds from the reference and query views are focalized from the object coordinate system to the camera coordinate system. (C) Leveraging the proposed Points and RGB SSMs, features are extracted from the focalized point clouds and RGB images, forming point-wise reference and query features. (D) These features are then used to establish point-wise alignment to solve the object pose. Finally, the computed pose is fed back into module (B) to iteratively improve the accuracy of the point-wise alignment, yielding a more precise object pose.
+        </div>
         <img src="static/images/Fig2.jpg" width="100%">
       </div>
     </div>
